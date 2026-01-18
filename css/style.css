@@ -1,26 +1,79 @@
+/* ---------- Base ---------- */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 40px;
+  margin: 0;
+  padding: 40px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #ffffff;
   color: #111;
-  background: #fff;
-}
-
-h1 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-}
-
-p {
-  max-width: 600px;
   line-height: 1.6;
 }
 
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+p {
+  max-width: 700px;
+  font-size: 16px;
+}
+
+/* ---------- Links ---------- */
 a {
   color: #000;
   text-decoration: none;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #ccc;
 }
 
 a:hover {
-  opacity: 0.7;
+  border-bottom-color: #000;
+}
+
+/* ---------- Gallery ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ---------- Arabic (RTL support) ---------- */
+html[dir="rtl"] body {
+  text-align: right;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 20px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
 }
